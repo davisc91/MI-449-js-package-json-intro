@@ -6,11 +6,10 @@
     "dev:sass": "node-sass source/scss/style.scss --watch --output=compiled/css --output-style=compressed --source-map=true",
     "dev": "run-p dev:*",
     "build:html-linter": "htmlhint",
-    "build:style-linter": "stylelint",
-    "build:style-linter-2": "stylelint-config-standard",
+    "build:style-linter": "stylelint '**/*.scss'",
     "build:js-linter": "standard",
     "build:sass": "node-sass source/scss/style.scss --output=compiled/css --output-style=compressed --source-map=true",
-    "deploy:surge": "surge --project . --domain davisc91-js-package-json-intro.surge.sh",
+    "deploy:surge": "surge --project . --domain https://davisc91-js-package-json-intro.surge.sh/",
     "deploy": "run-s build:* deploy:surge"
   },
   "devDependencies": {
@@ -19,10 +18,8 @@
     "node-sass": "^4.13.1",
     "npm-run-all": "^4.1.5",
     "standard": "^14.3.3",
+    "stylelint": "^13.3.1",
     "stylelint-config-standard": "^20.0.0",
     "surge": "^0.21.3"
-  },
-  "dependencies": {
-    "stylelint": "^13.3.1"
   }
 }
